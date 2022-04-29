@@ -15,6 +15,6 @@ describe('<Category />', () => {
     );
 
     const element = getByTestId('category-active');
-    expect(element.props.style[0]).toHaveProperty('backgroundColor', '#1DA154');
+    expect(element.props.style[0]).toHaveProperty('backgroundColor', '#00B761');
   });
 });
