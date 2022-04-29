@@ -1,6 +1,6 @@
 import React from 'react';
 import { Category } from '.';
-import { renderWithTheme } from '../../../jest/renderWithTheme';
+import { renderWithTheme } from '../../../../jest/renderWithTheme';
 
 describe('<Category />', () => {
   it('should render correctly component', () => {
