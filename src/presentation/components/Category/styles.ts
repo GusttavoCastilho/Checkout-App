@@ -8,18 +8,18 @@ type TitleProps = {
 export const Container = styled.View``;
 
 export const Title = styled.Text<TitleProps>`
-  font-size: ${RFValue(17)}px;
-  font-weight: 800;
+  font-size: ${RFValue(14)}px;
+  font-weight: 500;
   color: ${({ theme, isActive }) =>
-    !isActive ? theme.colors.gray : theme.colors.dark};
+    !isActive ? theme.colors.gray : theme.colors.primary};
 `;
 
 export const Activity = styled.View`
-  width: 35px;
-  height: 3px;
+  width: 30px;
+  height: 2px;
 
   border-radius: 1px;
   background-color: ${({ theme }) => theme.colors.primary};
 
-  margin-top: 2px;
+  margin-top: 4px;
 `;
