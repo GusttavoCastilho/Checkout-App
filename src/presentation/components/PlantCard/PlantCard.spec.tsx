@@ -2,10 +2,10 @@ import React from 'react';
 import { PlantCard, PlantCardProps } from '.';
 import { renderWithTheme } from '../../../../jest/renderWithTheme';
 
-import klipartz from '../../../assets/klipartz.png';
+import succulent from '../../../assets/succulent.png';
 
 const props: PlantCardProps = {
-  image: klipartz,
+  image: succulent,
   title: 'Succulent Plant',
   price: 39.99,
 };

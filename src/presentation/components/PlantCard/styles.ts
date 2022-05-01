@@ -1,5 +1,5 @@
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 type BoxFavoriteProps = {
   isFavorite: boolean;
@@ -7,6 +7,11 @@ type BoxFavoriteProps = {
 
 type BoxAddProps = {
   isAdd: boolean;
+};
+
+type ImageProps = {
+  minWidth: number;
+  minHeight: number;
 };
 
 export const Container = styled.View`
@@ -49,7 +54,12 @@ export const BoxImage = styled.View`
   justify-content: center;
 `;
 
-export const Image = styled.Image``;
+export const Image = styled.Image<ImageProps>`
+  ${({ minHeight, minWidth }) => css`
+    min-height: ${minHeight};
+    min-width: ${minWidth};
+  `}
+`;
 
 export const Title = styled.Text`
   font-size: ${RFValue(14)}px;

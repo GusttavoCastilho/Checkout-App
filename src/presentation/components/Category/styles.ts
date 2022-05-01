@@ -5,10 +5,12 @@ type TitleProps = {
   isActive: boolean;
 };
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  padding-right: 20px;
+`;
 
 export const Title = styled.Text<TitleProps>`
-  font-size: ${RFValue(14)}px;
+  font-size: ${RFValue(12)}px;
   font-weight: 500;
   color: ${({ theme, isActive }) =>
     !isActive ? theme.colors.gray : theme.colors.primary};

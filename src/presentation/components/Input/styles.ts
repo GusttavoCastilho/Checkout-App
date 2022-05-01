@@ -3,7 +3,7 @@ import { TextInputProps } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  width: 294px;
+  width: 82%;
   height: 50px;
 
   border-radius: 12px;

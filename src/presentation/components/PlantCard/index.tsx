@@ -1,5 +1,4 @@
 import React from 'react';
-import { ImageSourcePropType } from 'react-native';
 
 import { useTheme } from 'styled-components/native';
 
@@ -21,8 +20,14 @@ import {
 AntDesign.loadFont();
 Entypo.loadFont();
 
+type ImageProps = {
+  uri: string;
+  width: number;
+  height: number;
+};
+
 export type PlantCardProps = {
-  image: ImageSourcePropType;
+  image: ImageProps;
   title: string;
   price: number;
   isFavorite?: boolean;
@@ -47,7 +52,11 @@ export const PlantCard = ({
         />
       </BoxFavorite>
       <BoxImage>
-        <Image source={image} />
+        <Image
+          source={{ uri: image.uri }}
+          minWidth={image.width}
+          minHeight={image.height}
+        />
       </BoxImage>
       <Content>
         <Title>{title}</Title>
