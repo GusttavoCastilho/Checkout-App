@@ -1,10 +1,14 @@
+import '../reactotron';
 import React from 'react';
-
-import { View, Text, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 
 import { ThemeProvider } from 'styled-components/native';
-
 import themes from './global';
+
+import { Provider } from 'react-redux';
+import store from '../src/application/redux';
+
+import { Home } from './presentation/screens/Home';
 
 const App = () => {
   const deviceTheme = useColorScheme();
@@ -13,11 +17,11 @@ const App = () => {
     deviceTheme && deviceTheme === 'dark' ? themes[deviceTheme] : themes.light;
 
   return (
-    <ThemeProvider theme={theme}>
-      <View>
-        <Text>Hello World</Text>
-      </View>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </Provider>
   );
 };
 
