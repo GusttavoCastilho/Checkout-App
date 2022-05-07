@@ -13,4 +13,14 @@ export class PlantRequest implements IPlantRequest {
     const response = await this.api.get(this.url);
     return response.data;
   }
+
+  async getFindCategoryPlants(name: string): Promise<Plant[] | undefined> {
+    const response = await this.api.get(`${this.url}?category=${name}`);
+    return response.data;
+  }
+
+  async getFindNamePlants(name: string): Promise<Plant[] | undefined> {
+    const response = await this.api.get(`${this.url}?title_like=${name}`);
+    return response.data;
+  }
 }
