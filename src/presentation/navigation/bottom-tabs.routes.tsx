@@ -40,8 +40,8 @@ export const BottomTabsRoutes = () => {
             width: 0,
             height: 10,
           },
-          shadowOpacity: 0.7,
-          shadowRadius: 15,
+          shadowOpacity: 0.5,
+          shadowRadius: 10,
         },
       }}>
       <Screen
@@ -56,7 +56,7 @@ export const BottomTabsRoutes = () => {
         }}
       />
       <Screen
-        name="plantDetails"
+        name="favourite"
         component={PlantDetails}
         options={{
           tabBarIcon: props => (
