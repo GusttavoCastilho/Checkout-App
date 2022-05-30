@@ -8,7 +8,9 @@ import themes from './global';
 import { Provider } from 'react-redux';
 import store from '../src/application/redux';
 
-import { Home } from './presentation/screens/Home';
+import { CartProvider } from '../src/application/context/CartContext';
+
+import { Routes } from './presentation/navigation';
 
 const App = () => {
   const deviceTheme = useColorScheme();
@@ -18,9 +20,11 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Home />
-      </ThemeProvider>
+      <CartProvider>
+        <ThemeProvider theme={theme}>
+          <Routes />
+        </ThemeProvider>
+      </CartProvider>
     </Provider>
   );
 };
