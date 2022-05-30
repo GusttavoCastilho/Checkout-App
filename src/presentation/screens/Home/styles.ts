@@ -1,9 +1,9 @@
+import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
-
   background-color: ${({ theme }) => theme.colors.white};
 
   padding: 30px 30px;
@@ -15,7 +15,7 @@ export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
 
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 export const BoxTitle = styled.View``;
@@ -62,3 +62,17 @@ export const BoxCategory = styled.View`
 
   flex-direction: row;
 `;
+
+export const BoxPlants = styled.View`
+  width: 100%;
+
+  margin-top: 30px;
+`;
+
+export const ListPlants = styled.FlatList`` as unknown as typeof FlatList;
+
+export const LoadingPlants = styled.ActivityIndicator`
+  margin-top: 50px;
+`;
+
+export const ButtonCart = styled.TouchableOpacity``;
