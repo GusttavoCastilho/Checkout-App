@@ -16,14 +16,15 @@ import {
   Price,
   Title,
 } from './styles';
+import { TouchableOpacityProps } from 'react-native';
 
 AntDesign.loadFont();
 Entypo.loadFont();
 
 type ImageProps = {
   uri: string;
-  width: number;
-  height: number;
+  width: string;
+  height: string;
 };
 
 export type PlantCardProps = {
@@ -32,7 +33,10 @@ export type PlantCardProps = {
   price: number;
   isFavorite?: boolean;
   isAdd?: boolean;
-};
+  onFavoritePress?: () => void;
+  onAddCardPress?: () => void;
+  onNavigateDetailsPress?: () => void;
+} & TouchableOpacityProps;
 
 export const PlantCard = ({
   image,
@@ -40,11 +44,17 @@ export const PlantCard = ({
   price,
   isFavorite = false,
   isAdd = false,
+  onFavoritePress,
+  onAddCardPress,
+  onNavigateDetailsPress,
 }: PlantCardProps) => {
   const theme = useTheme();
   return (
-    <Container testID="plant-container">
-      <BoxFavorite isFavorite={isFavorite} testID="plant-favorite">
+    <Container testID="plant-container" onPress={onNavigateDetailsPress}>
+      <BoxFavorite
+        isFavorite={isFavorite}
+        testID="plant-favorite"
+        onPress={onFavoritePress}>
         <Entypo
           name="heart"
           size={18}
@@ -53,7 +63,9 @@ export const PlantCard = ({
       </BoxFavorite>
       <BoxImage>
         <Image
-          source={{ uri: image.uri }}
+          source={{
+            uri: image.uri,
+          }}
           minWidth={image.width}
           minHeight={image.height}
         />
@@ -62,7 +74,7 @@ export const PlantCard = ({
         <Title>{title}</Title>
         <BoxPrice>
           <Price>${price}</Price>
-          <BoxAdd isAdd={isAdd} testID="plant-add">
+          <BoxAdd isAdd={isAdd} testID="plant-add" onPress={onAddCardPress}>
             <AntDesign name="plus" color="white" size={12} />
           </BoxAdd>
         </BoxPrice>
