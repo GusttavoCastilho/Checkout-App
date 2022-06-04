@@ -25,6 +25,7 @@ export const plantSlice = createSlice({
     },
     getPlantsSuccess: (state, { payload }) => {
       state.loading = false;
+      state.error = false;
       state.plant = payload;
     },
     getPlansFailure: (state) => {

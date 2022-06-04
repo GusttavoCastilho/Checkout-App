@@ -17,6 +17,7 @@
     <li><a href="https://testing-library.com/docs/react-native-testing-library/intro/">React Native Testing Library</a></li>
     <li><a href="https://redux.js.org/">Redux</a></li>
     <li><a href="https://redux-saga.js.org/">Redux Saga</a></li>
+    <li><a href="https://github.com/rt2zz/redux-persist">Redux Persist</a></li>
 
 <h2>Installing and running the project 🎲</h2>
 

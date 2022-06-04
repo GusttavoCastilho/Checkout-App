@@ -6,7 +6,9 @@ import { ThemeProvider } from 'styled-components/native';
 import themes from './global';
 
 import { Provider } from 'react-redux';
-import store from '../src/application/redux';
+import { store, persistor } from '../src/application/redux';
+
+import { PersistGate } from 'redux-persist/integration/react';
 
 import { CartProvider } from '../src/application/context/CartContext';
 
@@ -20,11 +22,13 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <CartProvider>
-        <ThemeProvider theme={theme}>
-          <Routes />
-        </ThemeProvider>
-      </CartProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <CartProvider>
+          <ThemeProvider theme={theme}>
+            <Routes />
+          </ThemeProvider>
+        </CartProvider>
+      </PersistGate>
     </Provider>
   );
 };
